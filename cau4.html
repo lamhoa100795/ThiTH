@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!--them dong moi trong table-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("input[type=button]").click(function(){
+                $("#sampleTable").append("<tr><td>Row 11</td><td>Row 22</td></tr>")
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row 11
+            </td>
+            <td>Row 22
+            </td>
+        </tr>
+        <tr>
+            <td>Row 11
+            </td>
+            <td>Row 22
+            </td>
+        </tr>
+    </table>
+    <br />
+    <input type="button" onclick="" value="Add Row" />
+</body>
+</html>

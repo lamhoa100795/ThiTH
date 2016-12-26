@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+function check() {
+ 
+    var data = new Array();
+    data[0] = document.getElementById('name').value;
+    data[1] = document.getElementById('email').value;
+    data[2] = document.getElementById('password').value;
+
+ 
+    var myerror = new Array();
+    myerror[0] = "<span style='color:red,font-weight:bold'>B?n chua nh?p tên</span>";
+    myerror[1] = "<span style='color:red,font-weight:bold'>B?n chua nh?p email</span>";
+    myerror[2] = "<span style='color:red,font-weight:bold'>B?n chua nh?p m?t kh?u</span>";
+ 
+ 
+    var nearby = new Array("z-name", "z-email", "z-password", "z-cpassword");
+ 
+    for (i in data) {
+        var error = myerror[i];
+        var div = nearby[i];
+ 
+        if (data[i]=="") {
+            document.getElementById(div).innerHTML = error;
+        } else {
+            document.getElementById(div).innerHTML = "OK!";
+        }
+    }
+ 
+}
+</script>
+<table border="1px">
+    <tr>
+        <td>Ten:</td>
+        <td>
+            <input type="text" name="name" id="name" onkeyup="check()" />
+        </td>
+        <td>
+            <div id="z-name"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>
+            <input type="text" name="email" id="email" onkeyup="check()" />
+        </td>
+        <td>
+            <div id="z-email"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>Mat khau:</td>
+        <td>
+            <input type="text" name="password" id="password" onkeyup="check()" />
+        </td>
+        <td>
+            <div id="z-password"></div>
+        </td>
+    </tr>
+   
+</table>
+
